@@ -1,0 +1,11 @@
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg-base);color:var(--text-primary);font-family:var(--font-body);font-size:var(--fs-body);line-height:var(--lh-body);-webkit-font-smoothing:antialiased}
+img,svg,video{display:block;max-width:100%}
+a{color:var(--accent);text-decoration:none;transition:color var(--dur) var(--ease-out)}
+a:hover{color:var(--accent-hover);text-decoration:underline;text-underline-offset:3px}
+a:active{color:var(--accent-press)}
+button,input,select,textarea{font:inherit;color:inherit}
+::selection{background:var(--amber-500);color:var(--text-on-accent)}
+:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px;border-radius:var(--r-xs)}
+hr{border:0;border-top:1px solid var(--border-subtle);margin:var(--sp-8) 0}

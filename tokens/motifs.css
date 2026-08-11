@@ -1,0 +1,26 @@
+/* Brand motifs as reusable utilities.
+   1. Hexagon  2. Amber chevron banner  3. Dot texture  4. Amber circle-check bullet */
+:root{
+  /* pointy top/bottom — photo & icon frames */
+  --hex-v:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%); /* @kind other */
+  /* pointy left/right — price & tier badges */
+  --hex-h:polygon(14% 0%,86% 0%,100% 50%,86% 100%,14% 100%,0% 50%); /* @kind other */
+  /* one cut corner — the responsive, web-safe hexagon reference */
+  --cut-corner:polygon(0 0,calc(100% - var(--clip-corner)) 0,100% var(--clip-corner),100% 100%,0 100%); /* @kind other */
+  /* chevron callout: slanted bottom-left, arrow point right */
+  --chevron:polygon(0 0,calc(100% - 30px) 0,100% 50%,calc(100% - 30px) 100%,28px 100%); /* @kind other */
+  /* Style-B spec band: black notch bites in from the left edge */
+  --band-notch:polygon(0 0,100% 0,100% 100%,0 100%,44px 50%); /* @kind other */
+}
+.bcc-hex-v{clip-path:var(--hex-v)}
+.bcc-hex-h{clip-path:var(--hex-h)}
+.bcc-cut-corner{clip-path:var(--cut-corner)}
+.bcc-chevron{clip-path:var(--chevron)}
+.bcc-band-notch{clip-path:var(--band-notch)}
+
+/* Dot texture — low contrast, warm. Sits on --bg-base, never on a card. */
+.bcc-dots{background-image:radial-gradient(circle at center,rgba(248,176,16,.07) 1.7px,transparent 1.8px);background-size:28px 28px}
+.bcc-dots--poster{background-image:radial-gradient(circle at center,rgba(248,176,16,.10) 4px,transparent 4.5px),radial-gradient(circle at center,rgba(248,176,16,.06) 7px,transparent 7.5px);background-size:56px 56px,132px 132px;background-position:0 0,30px 40px}
+
+/* Amber hairline rule used above section headings */
+.bcc-rule{width:56px;height:3px;background:var(--accent);border:0}

@@ -1,0 +1,45 @@
+/* Bubbles Car Care — motion. Short, mechanical, no bounce.
+   Everything here collapses under prefers-reduced-motion. */
+@keyframes bcc-fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes bcc-fade-in{from{opacity:0}to{opacity:1}}
+@keyframes bcc-fade-right{from{opacity:0;transform:translateX(-26px)}to{opacity:1;transform:none}}
+@keyframes bcc-fade-left{from{opacity:0;transform:translateX(26px)}to{opacity:1;transform:none}}
+@keyframes bcc-scale-in{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
+@keyframes bcc-hex-in{from{opacity:0;transform:translateY(18px) rotate(-4deg)}to{opacity:1;transform:none}}
+@keyframes bcc-rule-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes bcc-ken-burns{from{transform:scale(1.02)}to{transform:scale(1.12)}}
+@keyframes bcc-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes bcc-glow-pulse{0%,100%{box-shadow:0 8px 24px rgba(248,176,16,.24)}50%{box-shadow:0 10px 36px rgba(248,176,16,.44)}}
+@keyframes bcc-drip{0%{transform:translateY(-6px);opacity:0}30%{opacity:1}100%{transform:translateY(18px);opacity:0}}
+@keyframes bcc-spin{to{transform:rotate(360deg)}}
+
+/* Scroll reveal. JS adds .is-in when the element enters the viewport;
+   --d staggers siblings (set inline, e.g. style="--d:120ms").
+   The 8s failsafe keyframe is deliberate: if JS is ever wedged, content still
+   appears. An animation must never be the only gate on reading the page. */
+.bcc-reveal{opacity:0;animation:bcc-reveal-failsafe 1ms linear 8s both}
+@keyframes bcc-reveal-failsafe{to{opacity:1}}
+.bcc-reveal.is-in{animation:bcc-fade-up var(--dur-slow) var(--ease-out) both;animation-delay:var(--d,0ms)}
+.bcc-reveal--fade.is-in{animation-name:bcc-fade-in}
+.bcc-reveal--right.is-in{animation-name:bcc-fade-right}
+.bcc-reveal--left.is-in{animation-name:bcc-fade-left}
+.bcc-reveal--scale.is-in{animation-name:bcc-scale-in}
+.bcc-reveal--hex.is-in{animation-name:bcc-hex-in}
+
+/* Slow drift on hero photography — the only ambient motion in the system. */
+.bcc-kenburns{animation:bcc-ken-burns 18s var(--ease-in-out) infinite alternate}
+
+/* Amber rule that draws itself in under a heading */
+.bcc-rule--anim{transform-origin:left center}
+.is-in>.bcc-rule--anim,.bcc-rule--anim.is-in{animation:bcc-rule-grow var(--dur-slow) var(--ease-out) both}
+
+/* Edge-to-edge scrolling credential strip */
+.bcc-marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.bcc-marquee__track{display:flex;width:max-content;animation:bcc-marquee 32s linear infinite}
+.bcc-marquee:hover .bcc-marquee__track{animation-play-state:paused}
+
+@media (prefers-reduced-motion:reduce){
+  .bcc-reveal,.bcc-reveal.is-in{opacity:1!important;animation:none!important}
+  .bcc-kenburns,.bcc-marquee__track,.bcc-rule--anim{animation:none!important}
+  .bcc-rule--anim{transform:none!important}
+}

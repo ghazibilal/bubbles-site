@@ -1,0 +1,65 @@
+/* Bubbles Car Care — type. One family, two voices:
+   DISPLAY = Poppins Black Italic, UPPERCASE, tight. BODY = Poppins Regular/Light, sentence case.
+   Scale below is the WEB scale. Poster/social headings use --fs-poster-* instead. */
+:root{
+  --font-display:"Poppins",system-ui,sans-serif;
+  --font-body:"Poppins",system-ui,sans-serif;
+  --font-numeric:"Poppins",system-ui,sans-serif;
+
+  --fw-light:300; /* @kind font */
+  --fw-regular:400; /* @kind font */
+  --fw-medium:500; /* @kind font */
+  --fw-semibold:600; /* @kind font */
+  --fw-bold:700; /* @kind font */
+  --fw-extrabold:800; /* @kind font */
+  --fw-black:900; /* @kind font */
+
+  /* Web display scale (fluid) */
+  --fs-display-xl:clamp(2.5rem,6vw,4.5rem); /* @kind font */ /* 40 → 72 hero line */
+  --fs-display-lg:clamp(2rem,4.6vw,3.5rem); /* @kind font */ /* 32 → 56 section opener */
+  --fs-display-md:clamp(1.625rem,3.4vw,2.5rem); /* @kind font */ /* 26 → 40 sub-section */
+  --fs-display-sm:1.375rem; /* @kind font */ /* 22 card title */
+
+  /* Poster / social only — headline ≈ 18–20% of a 1080×1350 canvas */
+  --fs-poster-xl:104px; /* @kind font */
+  --fs-poster-lg:84px; /* @kind font */
+  --fs-poster-md:56px; /* @kind font */
+
+  /* Body scale */
+  --fs-h4:1.25rem; /* @kind font */
+  --fs-body-lg:1.0625rem; /* @kind font */
+  --fs-body:1rem; /* @kind font */
+  --fs-body-sm:.9375rem; /* @kind font */
+  --fs-caption:.8125rem; /* @kind font */
+  --fs-eyebrow:.75rem; /* @kind font */
+
+  --lh-display:.92; /* @kind font */
+  --lh-tight:1.15; /* @kind font */
+  --lh-snug:1.35; /* @kind font */
+  --lh-body:1.6; /* @kind font */
+  --lh-relaxed:1.75; /* @kind font */
+
+  --tr-display:-.02em; /* @kind font */
+  --tr-tight:-.01em; /* @kind font */
+  --tr-label:.06em; /* @kind font */
+  --tr-eyebrow:.18em; /* @kind font */
+
+  /* Optical condensing for poster headlines. Web headings do NOT use this. */
+  --display-condense:.92; /* @kind font */
+}
+
+/* Display: the two-tone italic uppercase headline is the brand's signature. */
+.bcc-display{font-family:var(--font-display);font-weight:var(--fw-black);font-style:italic;text-transform:uppercase;line-height:var(--lh-display);letter-spacing:var(--tr-display);color:var(--text-primary);margin:0}
+.bcc-display--xl{font-size:var(--fs-display-xl)}
+.bcc-display--lg{font-size:var(--fs-display-lg)}
+.bcc-display--md{font-size:var(--fs-display-md)}
+.bcc-display--sm{font-size:var(--fs-display-sm)}
+/* line 1 amber, line 2 white — never the other way round */
+.bcc-display__lead{display:block;color:var(--text-accent)}
+.bcc-display__tail{display:block;color:var(--text-primary)}
+
+.bcc-eyebrow{font-family:var(--font-body);font-weight:var(--fw-semibold);font-size:var(--fs-eyebrow);letter-spacing:var(--tr-eyebrow);text-transform:uppercase;color:var(--text-accent);margin:0}
+.bcc-label{font-family:var(--font-body);font-weight:var(--fw-semibold);font-size:var(--fs-caption);letter-spacing:var(--tr-label);text-transform:uppercase;color:var(--text-muted)}
+.bcc-body{font-family:var(--font-body);font-weight:var(--fw-regular);font-size:var(--fs-body);line-height:var(--lh-body);color:var(--text-muted);text-wrap:pretty}
+.bcc-lead{font-family:var(--font-body);font-weight:var(--fw-light);font-size:var(--fs-body-lg);line-height:var(--lh-relaxed);color:var(--text-muted);text-wrap:pretty}
+.bcc-price{font-family:var(--font-numeric);font-weight:var(--fw-extrabold);font-variant-numeric:tabular-nums;letter-spacing:var(--tr-tight)}

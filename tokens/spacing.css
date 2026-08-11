@@ -1,0 +1,20 @@
+/* 4px base grid. Sections breathe; cards are tight. */
+:root{
+  --sp-0:0; /* @kind spacing */ --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-5:20px;
+  --sp-6:24px; --sp-7:28px; --sp-8:32px; --sp-10:40px; --sp-12:48px;
+  --sp-16:64px; --sp-20:80px; --sp-24:96px; --sp-32:128px;
+
+  --container:1200px; /* @kind spacing */
+  --container-narrow:760px; /* @kind spacing */
+  --gutter:clamp(20px,5vw,48px); /* @kind spacing */
+  --section-y:clamp(64px,9vw,128px); /* @kind spacing */
+  --grid-gap:clamp(16px,2.2vw,28px); /* @kind spacing */
+
+  --header-h:88px; /* @kind spacing */
+  --header-h-mobile:72px; /* @kind spacing */
+
+  --tap-min:44px; /* never smaller on mobile  @kind spacing */
+}
+.bcc-container{width:100%;max-width:var(--container);margin-inline:auto;padding-inline:var(--gutter)}
+.bcc-container--narrow{max-width:var(--container-narrow)}
+.bcc-section{padding-block:var(--section-y)}

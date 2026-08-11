@@ -1,0 +1,56 @@
+/* Bubbles Car Care — colour. Dark-first. There is no light mode.
+   One brand colour (amber) + a black-to-charcoal neutral ramp. Nothing else is brand. */
+:root{
+  /* ── Brand amber ─────────────────────────────────────────── */
+  --amber-500:#F8B010;              /* THE brand colour. Logo, buttons, hexagons, checkmarks. */
+  --amber-400:#FFC544;              /* hover / lit edge only */
+  --amber-600:#D9940A;              /* pressed / gradient bottom only */
+  --amber-tint-08:rgba(248,176,16,.08);
+  --amber-tint-16:rgba(248,176,16,.16);
+  --amber-tint-32:rgba(248,176,16,.32);
+
+  /* ── Neutral ramp (near-black → charcoal) ────────────────── */
+  --ink-900:#080808;                /* page base */
+  --ink-800:#121212;                /* card / elevated surface */
+  --ink-700:#1C1C1C;                /* raised surface, inputs, table stripes */
+  --ink-600:#242424;                /* hover on a raised surface */
+  --ink-500:#2A2A2A;                /* borders, dividers, hairlines */
+  --ink-400:#3A3A3A;                /* strong border, focus outline on dark */
+  --grey-500:#6E6E6E;               /* disabled text, tertiary meta */
+  --grey-300:#A8A8A8;               /* muted body text */
+  --white-100:#F8F8F8;              /* primary text — never pure #FFF */
+
+  /* ── Functional states (UI plumbing, NOT brand colours) ──── */
+  --state-error:#E5533D;            /* form validation only */
+  --state-success:#4CAF6D;          /* form success only */
+
+  /* ── Partner brands (logos only — never as our accent) ───── */
+  --partner-gtechniq-red:#ED1C24;
+
+  /* ── Semantic aliases: use these in components ───────────── */
+  --bg-base:var(--ink-900);
+  --bg-surface:var(--ink-800);
+  --bg-surface-2:var(--ink-700);
+  --bg-surface-hover:var(--ink-600);
+  --bg-inset:#0D0D0D;
+  --bg-overlay:rgba(8,8,8,.82);
+
+  --border-subtle:var(--ink-500);
+  --border-strong:var(--ink-400);
+  --border-accent:var(--amber-500);
+
+  --text-primary:var(--white-100);
+  --text-muted:var(--grey-300);
+  --text-faint:var(--grey-500);
+  --text-accent:var(--amber-500);
+  --text-on-accent:var(--ink-900);  /* amber ALWAYS carries near-black text */
+
+  --accent:var(--amber-500);
+  --accent-hover:var(--amber-400);
+  --accent-press:var(--amber-600);
+  --focus-ring:var(--amber-500);
+
+  /* photo scrim: every photo sits under this so text stays legible */
+  --scrim-photo:linear-gradient(90deg,rgba(8,8,8,.94) 0%,rgba(8,8,8,.78) 42%,rgba(8,8,8,.35) 100%); /* @kind color */
+  --scrim-photo-bottom:linear-gradient(180deg,rgba(8,8,8,0) 35%,rgba(8,8,8,.92) 100%); /* @kind color */
+}
